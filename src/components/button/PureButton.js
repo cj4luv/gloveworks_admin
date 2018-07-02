@@ -1,4 +1,4 @@
-import React, { Component, Children } from 'react';
+import React, { PureComponent, Children } from 'react';
 import PropTypes from 'prop-types';
 
 function coalesceNonElementChildren(children, coalesceNodes) {
@@ -26,12 +26,10 @@ function coalesceNonElementChildren(children, coalesceNodes) {
   return coalescedChildren;
 }
 
-class PureButton extends Component {
+class PureButton extends PureComponent {
   renderGroupedChildren() {
     const getChildren = coalesceNonElementChildren(this.props.children, (children, index) => (
-      <p
-        key={index}
-      >
+      <p key={index}>
         {children}
       </p>
     ));
@@ -52,7 +50,7 @@ class PureButton extends Component {
         role="button"
         tabIndex={this.props.tabIndex}
         onClick={() => this.props.onClick()}
-        style={{ ...this.props.style, cursor: 'pointer' }}
+        style={{ ...this.props.style, cursor: 'pointer', outline: 'none' }}
       >
         {this.renderGroupedChildren()}
       </div>

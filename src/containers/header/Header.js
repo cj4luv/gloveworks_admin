@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
-
   render() {
     return (
-      <div>
-        <p>Custom Options</p>
+      <div style={styles.container}>
+        <p>
+Custom Options
+        </p>
       </div>
     );
   }
-
 }
 
 const styles = {

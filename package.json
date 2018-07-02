@@ -132,7 +132,8 @@
       "jsx-a11y/click-events-have-key-events": 0,
       "no-console": 0,
       "react/forbid-prop-types": 0,
-      "no-alert": 0
+      "no-alert": 0,
+      "react/destructuring-assignment": 0
     }
   },
   "eslintIgnore": [
