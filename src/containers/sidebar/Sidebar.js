@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Button from '../../components/button/PureButton';
 
@@ -28,7 +29,7 @@ class Sidebar extends Component {
           </div>
           <Button
             style={styles.categoryBtn}
-            onClick={() => alert('회원 주문')}
+            onClick={() => this.props.history.push('/')}
           >
             <div style={styles.categoryCircle} />
             <p style={styles.categoryBtnTitle}>
@@ -37,7 +38,7 @@ class Sidebar extends Component {
           </Button>
           <Button
             style={styles.categoryBtn}
-            onClick={() => alert('비회원주문')}
+            onClick={() => this.props.history.push('/nomemberOrder')}
           >
             <div style={styles.categoryCircleAnother} />
             <p style={styles.categoryBtnTitleAnother}>
@@ -46,7 +47,7 @@ class Sidebar extends Component {
           </Button>
           <Button
             style={styles.categoryBtn}
-            onClick={() => alert('정산관리')}
+            onClick={() => this.props.history.push('/adjustedFee')}
           >
             <div style={styles.categoryCircleAnother} />
             <p style={styles.categoryBtnTitleAnother}>
@@ -60,6 +61,14 @@ class Sidebar extends Component {
     );
   }
 }
+
+Sidebar.propTypes = {
+  history: PropTypes.object,
+};
+
+Sidebar.defaultProps = {
+  history: {},
+};
 
 const styles = {
   container: {

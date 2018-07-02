@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import Header from '../containers/header/Header';
 import Sidebar from '../containers/sidebar/Sidebar';
@@ -10,7 +11,7 @@ class Routes extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <Sidebar />
+        <Sidebar history={this.props.history} />
 
         <div style={styles.body}>
           <Header />
@@ -26,6 +27,14 @@ class Routes extends Component {
     );
   }
 }
+
+Routes.propTypes = {
+  history: PropTypes.object,
+};
+
+Routes.defaultProps = {
+  history: {},
+};
 
 const styles = {
   container: {
